@@ -1,0 +1,73 @@
+@font-0: 60px;
+@font-1: 40px;
+@font-2: 28px;
+@font-3: 20px;
+@font-4: 16px;
+@font-5: 12px;
+@font-6: 11px;
+@header-title: 80px;
+
+@color-white : #ffffff;
+@color-black : #0B1218;
+@color-gray : #828282;
+@color-light-gray : rgba(11,18,24,0.5);
+@color-red: #E31B6D;
+@color-blue: #09769C;
+
+@huge: "Huge", sans-serif;
+
+
+// Breakpoints
+// Source: http://blog.scur.pl/2012/06/variable-media-queries-less-css/
+@highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
+              ~"only screen and (min--moz-device-pixel-ratio: 1.5)",
+              ~"only screen and (-o-min-device-pixel-ratio: 3/2)",
+              ~"only screen and (min-device-pixel-ratio: 1.5)";
+@mobile:      ~"only screen and (max-width: 529px)";
+@tablet:      ~"only screen and (min-width: 530px) and (max-width: 949px)";
+@desktop:     ~"only screen and (min-width: 950px) and (max-width: 1440px)";
+@desktop-xl:  ~"only screen and (min-width: 1441px)";
+
+
+/* ============================== */
+/* Default styles */
+.convert-bg{
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.bg-fixed{
+    background-attachment: fixed;
+}
+
+.aligner{
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* Show/Hide on small screen */
+.show-sm{
+	display: none;
+	@media @mobile, @tablet{
+		display: block;
+	}
+}
+
+.hide-sm{
+	@media @mobile, @tablet{
+		display: none;
+	}
+}
+
+
+.c-red{
+	color: @color-red;
+}
+
+
+h1,h2,h3,h4,h5,h6{
+	font-family: @huge;
+}
