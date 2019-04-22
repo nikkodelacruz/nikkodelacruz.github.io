@@ -35,6 +35,14 @@
                 }
             },
             onSlideLeave: function(section, origin, destination, direction){
+            	// page slider
+                if(destination.index == 1){
+                	$('.my-projects-section .home-section-background__index').addClass('d-none');
+                	$('.my-projects-section .slider').addClass('active');
+                }else{
+                	$('.my-projects-section .home-section-background__index').removeClass('d-none');
+                	$('.my-projects-section .slider').removeClass('active');
+                }
             },
             afterRender: function(){
             },

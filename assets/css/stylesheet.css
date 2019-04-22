@@ -356,6 +356,18 @@ h6 {
   letter-spacing: -1px;
   color: #E31B6D;
 }
+@media only screen and (min-width: 1441px) {
+  .main-container .main-section .main-section__title {
+    font-size: 8em;
+  }
+  .main-container .main-section .main-section__title hr {
+    border: 5px solid;
+    max-width: 1200px;
+  }
+  .main-container .main-section .main-section__title span {
+    font-size: 70px;
+  }
+}
 @media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
   .main-container .main-section .main-section__title {
     text-align: right;
@@ -598,27 +610,33 @@ h6 {
     font-size: 10px;
   }
 }
-.main-container .home-section__wrapper .home-section-details--right a {
+.main-container .home-section__wrapper .home-section-details--right .arrow-slider a {
   color: #E31B6D;
   font-size: 2em;
   font-weight: bold;
-  border: 10px solid;
   padding: 20px;
   transition: 0.5s;
+  background: #E31B6D;
+  color: #fff;
 }
-.main-container .home-section__wrapper .home-section-details--right a i.mdi {
+@media only screen and (min-width: 1441px) {
+  .main-container .home-section__wrapper .home-section-details--right .arrow-slider a {
+    font-size: 5em;
+    padding: 40px;
+  }
+  .main-container .home-section__wrapper .home-section-details--right .arrow-slider a i.mdi {
+    font-size: 130px !important;
+  }
+}
+.main-container .home-section__wrapper .home-section-details--right .arrow-slider a i.mdi {
   font-size: 50px;
   vertical-align: sub;
   transition: 0.5s;
   display: inline-block;
 }
-.main-container .home-section__wrapper .home-section-details--right a:hover {
-  color: #fff;
-  background: #E31B6D;
-}
-.main-container .home-section__wrapper .home-section-details--right a:hover i.mdi {
+.main-container .home-section__wrapper .home-section-details--right .arrow-slider a:hover i.mdi {
+  color: #0B1218;
   transform: translateX(15px);
-  color: #fff;
 }
 .main-container .footer-section {
   background-color: #0B1218;
@@ -923,7 +941,7 @@ h6 {
   z-index: 9999;
   width: 100%;
   height: 100%;
-  background: #252934;
+  background: #293347;
 }
 .preloader h5,
 .preloader img {
@@ -968,13 +986,48 @@ h6 {
   font-weight: bold;
   text-transform: uppercase;
 }
+.slide.projects-slide .fp-tableCell {
+  position: relative;
+}
+@media only screen and (min-width: 950px) and (max-width: 1440px) {
+  .slide.projects-slide .fp-tableCell {
+    vertical-align: bottom;
+  }
+}
+.slide .slider {
+  position: fixed;
+  font-size: 4em;
+  top: 50%;
+  color: #E31B6D;
+  transform: translateY(-50%);
+  transition: 0.5s;
+  opacity: 0;
+}
+@media only screen and (min-width: 1441px) {
+  .slide .slider {
+    font-size: 8em;
+  }
+}
+.slide .slider:hover {
+  color: #fff;
+}
+.slide .slider.slider--left {
+  left: 10px;
+}
+.slide .slider.slider--right {
+  right: 10px;
+}
+.slide .slider.active {
+  opacity: 1;
+  z-index: 2;
+}
 .fp-controlArrow.fp-prev,
 .fp-controlArrow.fp-next {
   display: none;
 }
 .my-projects-section ul.project-lists {
   position: relative;
-  z-index: 99;
+  z-index: 1;
   padding: 0;
   margin: 0;
   text-align: center;
@@ -990,15 +1043,23 @@ h6 {
 }
 .my-projects-section ul.project-lists > li .project-lists__container {
   position: relative;
-  height: 250px;
+  height: 225px;
   margin: 10px;
+}
+@media only screen and (min-width: 1441px) {
+  .my-projects-section ul.project-lists > li .project-lists__container {
+    height: 450px;
+  }
 }
 .my-projects-section ul.project-lists > li .project-lists__container .convert-bg {
   height: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__overlay {
   opacity: 1;
+}
+.my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__title {
+  opacity: 0;
 }
 .my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__description {
   transform: translateY(0);
@@ -1006,13 +1067,14 @@ h6 {
 .my-projects-section ul.project-lists > li .project-lists__container .project-lists__title {
   font-weight: bold;
   font-size: 2em;
-  color: #0B1218;
-  text-shadow: 3px 3px 1px #fff;
-  display: flex;
-  align-items: center;
-  vertical-align: middle;
-  justify-content: center;
-  height: 100%;
+  position: absolute;
+  color: #fff;
+  background: rgba(41, 51, 71, 0.6);
+  padding: 5px;
+  width: 100%;
+  bottom: 0;
+  border-radius: 0 0 10px 10px;
+  transition: 0.5s;
 }
 .my-projects-section ul.project-lists > li .project-lists__container .project-lists__overlay {
   position: absolute;
@@ -1023,7 +1085,7 @@ h6 {
   background: #293347;
   opacity: 0;
   transition: 0.5s;
-  border-radius: 20px;
+  border-radius: 10px;
   color: #fff;
   overflow: hidden;
 }

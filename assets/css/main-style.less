@@ -103,6 +103,16 @@ body{
 			    letter-spacing: -1px;
 			    color: @color-red;
 		    }
+		    @media @desktop-xl{
+			    font-size: 8em;
+			    hr{
+		    	    border: 5px solid;
+				    max-width: 1200px;
+			    }
+			    span{
+			    	font-size: 70px;
+			    }
+		    }
 	        @media @mobile, @tablet{
         	    text-align: right;
 			    font-size: 2.5em;
@@ -342,12 +352,22 @@ body{
 			    left: 0;
 			    font-size: 10px;
 	    	}
-	    	a{
-	    		color: @color-red;font-size: 2em;
+	    	.arrow-slider a{
+				color: @color-red;
+				font-size: 2em;
 			    font-weight: bold;
-			    border: 10px solid;
 			    padding: 20px;
 			    transition: 0.5s;
+				background: @color-red;
+			   	color: #fff;
+			   	@media @desktop-xl{
+					font-size: 5em;
+				    padding: 40px;
+				    i.mdi{
+			    	    font-size: 130px !important;
+				    }
+			   	}
+
 			    i.mdi{
 				    font-size: 50px;
 				    vertical-align: sub;
@@ -355,14 +375,12 @@ body{
 				    display: inline-block;
 			    }
 			    &:hover{
-		    		color: #fff;
-		    		background: @color-red;
 			    	i.mdi{
+			    		color: @color-black;
 				    	transform: translateX(15px);
-			    		color: #fff;
 			    	}
 			    }
-	    	}
+			}
 	    }
 
 	}
@@ -683,7 +701,7 @@ body{
 	z-index: 9999;
 	width: 100%;
 	height: 100%;
-	background: #252934;
+	background: @color-dblue;
 	
 	h5,
 	img{
@@ -739,6 +757,45 @@ body{
     }
 }
 
+// Fullpage Slider
+.slide{
+	&.projects-slide{
+		.fp-tableCell{
+			position: relative;
+			@media @desktop{
+				vertical-align: bottom;
+			}
+		}
+	}
+
+	.slider{
+		position: fixed;
+		font-size: 4em;
+		top: 50%;
+		color: @color-red;
+		transform: translateY(-50%);
+		transition: 0.5s;
+		opacity: 0;
+
+		@media @desktop-xl{
+			font-size: 8em;
+		}
+		&:hover{
+			color: #fff;
+		}
+		&.slider--left{
+			left: 10px;
+		}
+		&.slider--right{
+			right: 10px;
+		}
+		&.active{
+			opacity: 1;
+			z-index: 2;
+		}
+	}
+}
+
 // Slider arrow
 .fp-controlArrow{
 	&.fp-prev,
@@ -751,7 +808,7 @@ body{
 .my-projects-section{
 	ul.project-lists{
 	    position: relative;
-	    z-index: 99;
+	    z-index: 1;
 		padding: 0;
 		margin: 0;
 		text-align: center;
@@ -763,15 +820,21 @@ body{
 		    }
 			.project-lists__container{
 				position: relative;
-			    height: 250px;
+			    height: 225px;
 			    margin: 10px;
+			    @media @desktop-xl{
+			    	height: 450px;
+			    }
 				.convert-bg{
 					height: 100%;
-				    border-radius: 20px;
+				    border-radius: 10px;
 				}
 				&:hover{
 					.project-lists__overlay{
 						opacity: 1;
+					}
+					.project-lists__title{
+						opacity: 0;
 					}
 					.project-lists__description{
 			            transform: translateY(0);
@@ -780,13 +843,14 @@ body{
 				.project-lists__title{
 					font-weight: bold;
 				    font-size: 2em;
-				    color: @color-black;
-				    text-shadow: 3px 3px 1px #fff;
-				    display: flex;
-				    align-items: center;
-				    vertical-align: middle;
-				    justify-content: center;
-				    height: 100%;
+				    position: absolute;
+			        color: #fff;
+				    background: rgba(41, 51, 71, 0.6);
+				    padding: 5px;
+				    width: 100%;
+				    bottom: 0;
+				    border-radius: 0 0 10px 10px;
+				    transition: 0.5s;
 				}
 				.project-lists__overlay{
 					position: absolute;
@@ -794,10 +858,10 @@ body{
 					left: 0;
 					width: 100%;
 					height: 100%;
-					background: #293347;
+					background: @color-dblue;
 					opacity: 0;
 					transition: 0.5s;
-				    border-radius: 20px;
+				    border-radius: 10px;
 				    color: #fff;
 				    overflow: hidden;
 				}
