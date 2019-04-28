@@ -749,12 +749,13 @@ body{
     border-radius: 20px;
 	top: unset !important;
     bottom: 20px;
+    z-index: 999 !important; 
     ul li {
     	a{
 	    	&:hover,
 	    	&.active{
 	    		span{
-					background: @color-blue;
+					background: @color-red;
 	    		}
 	    	}
     	}
@@ -779,8 +780,13 @@ body{
 
 	.projects-slide__label{
 		position: relative;
-		z-index: 9;
-		color: @color-red;
+	    z-index: 9;
+	    color: #fff;
+	    display: inline-block;
+	    margin: 0 5%;
+	    border-bottom: 5px solid @color-red;
+	    padding-bottom: 5px;
+	    margin-bottom: 10px;
 	}
 
 	.slider{
@@ -914,17 +920,28 @@ body{
 	ul.contact-list{
 		& > li{
 			display: inline-block;
-			margin: 0 20px;
+			margin: 0 5px;
 			a{
+			    color: #fff;
+			    width: 80px;
+			    height: 80px;
+			    vertical-align: middle;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			    flex-direction: column;
 				color: #fff;
 				transition: 0.5s;
+			    background: @color-red;
+			    border-radius: 50%;
 				&:hover{
-					color: @color-red;
+					color: #fff;
+					border-radius: 0;
 				}
 			}
 			i.mdi{
-				line-height: 0;
-				font-size: 50px;
+				line-height: 1;
+				font-size: 25px;
 			}
 			span{
 				display: block;
