@@ -16,6 +16,10 @@ body{
 		background: #fff;
 		color: @color-black;
 
+		&:not(.open){
+			box-shadow: 7px -7px 0px 0px;
+		}
+
 		h1{
 		    font-weight: 900;
 		    transition: 0.5s;
@@ -352,6 +356,9 @@ body{
 			    left: 0;
 			    font-size: 10px;
 	    	}
+	    	@media @desktop, @desktop-xl{
+		    	width: 40%;
+	    	}
 	    	.arrow-slider a{
 				color: @color-red;
 				font-size: 2em;
@@ -388,6 +395,8 @@ body{
 	// Footer section
 	.footer-section{
 		background-color: @color-black;
+	    position: relative;
+	    z-index: 9;
 		.global-footer{
 		    padding: 65px 0 80px;
 
@@ -768,6 +777,12 @@ body{
 		}
 	}
 
+	.projects-slide__label{
+		position: relative;
+		z-index: 9;
+		color: @color-red;
+	}
+
 	.slider{
 		position: fixed;
 		font-size: 4em;
@@ -800,7 +815,9 @@ body{
 .fp-controlArrow{
 	&.fp-prev,
 	&.fp-next{
-		display: none;
+		&.active{
+			display: none;
+		}
 	}
 }
 
@@ -827,7 +844,7 @@ body{
 			    }
 				.convert-bg{
 					height: 100%;
-				    border-radius: 10px;
+				    border-radius: 20px;
 				}
 				&:hover{
 					.project-lists__overlay{
@@ -861,7 +878,7 @@ body{
 					background: @color-dblue;
 					opacity: 0;
 					transition: 0.5s;
-				    border-radius: 10px;
+				    border-radius: 20px;
 				    color: #fff;
 				    overflow: hidden;
 				}
@@ -888,6 +905,29 @@ body{
 					    }
 			        }
 				}
+			}
+		}
+	}
+}
+
+.contact-section{
+	ul.contact-list{
+		& > li{
+			display: inline-block;
+			margin: 0 20px;
+			a{
+				color: #fff;
+				transition: 0.5s;
+				&:hover{
+					color: @color-red;
+				}
+			}
+			i.mdi{
+				line-height: 0;
+				font-size: 50px;
+			}
+			span{
+				display: block;
 			}
 		}
 	}

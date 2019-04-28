@@ -278,6 +278,9 @@ h6 {
   background: #fff;
   color: #0B1218;
 }
+.main-container .header-logo:not(.open) {
+  box-shadow: 7px -7px 0px 0px;
+}
 .main-container .header-logo h1 {
   font-weight: 900;
   transition: 0.5s;
@@ -610,6 +613,11 @@ h6 {
     font-size: 10px;
   }
 }
+@media only screen and (min-width: 950px) and (max-width: 1440px), only screen and (min-width: 1441px) {
+  .main-container .home-section__wrapper .home-section-details--right {
+    width: 40%;
+  }
+}
 .main-container .home-section__wrapper .home-section-details--right .arrow-slider a {
   color: #E31B6D;
   font-size: 2em;
@@ -640,6 +648,8 @@ h6 {
 }
 .main-container .footer-section {
   background-color: #0B1218;
+  position: relative;
+  z-index: 9;
 }
 .main-container .footer-section .global-footer {
   padding: 65px 0 80px;
@@ -994,6 +1004,11 @@ h6 {
     vertical-align: bottom;
   }
 }
+.slide .projects-slide__label {
+  position: relative;
+  z-index: 9;
+  color: #E31B6D;
+}
 .slide .slider {
   position: fixed;
   font-size: 4em;
@@ -1021,8 +1036,8 @@ h6 {
   opacity: 1;
   z-index: 2;
 }
-.fp-controlArrow.fp-prev,
-.fp-controlArrow.fp-next {
+.fp-controlArrow.fp-prev.active,
+.fp-controlArrow.fp-next.active {
   display: none;
 }
 .my-projects-section ul.project-lists {
@@ -1053,7 +1068,7 @@ h6 {
 }
 .my-projects-section ul.project-lists > li .project-lists__container .convert-bg {
   height: 100%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__overlay {
   opacity: 1;
@@ -1085,7 +1100,7 @@ h6 {
   background: #293347;
   opacity: 0;
   transition: 0.5s;
-  border-radius: 10px;
+  border-radius: 20px;
   color: #fff;
   overflow: hidden;
 }
@@ -1110,6 +1125,24 @@ h6 {
 .my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a:hover {
   color: #fff;
   background: #E31B6D;
+}
+.contact-section ul.contact-list > li {
+  display: inline-block;
+  margin: 0 20px;
+}
+.contact-section ul.contact-list > li a {
+  color: #fff;
+  transition: 0.5s;
+}
+.contact-section ul.contact-list > li a:hover {
+  color: #E31B6D;
+}
+.contact-section ul.contact-list > li i.mdi {
+  line-height: 0;
+  font-size: 50px;
+}
+.contact-section ul.contact-list > li span {
+  display: block;
 }
 /*--------------------------------------------------------------
 5.0 Arabic Style
