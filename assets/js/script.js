@@ -116,6 +116,10 @@
 
 		$('.fp-controlArrow').addClass('active');
 
+		$('#contact-form').submit(function(event) {
+			event.preventDefault();
+		});
+
 
 	});
 
