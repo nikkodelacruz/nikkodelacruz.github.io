@@ -118,6 +118,33 @@
 
 		$('#contact-form').submit(function(event) {
 			event.preventDefault();
+
+			var name = $('input[name="name"]').val();
+			var email = $('input[name="email"]').val();
+			var message = $('textarea[name="message"]').val();
+
+			$.ajax({
+				url: "https://usebasin.com/f/7319a84f68f2.json",
+				method: "POST",
+				dataType: "json",
+				data: {
+					name: name,
+					email: email,
+					message: message 
+				},
+				beforeSend: function(){
+
+				},
+				success: function(response){
+
+					console.log(response);
+
+				},
+				error: function(response){
+					console.log(response);
+					alert("Something went wrong, Please try again");
+				}
+			});
 		});
 
 
