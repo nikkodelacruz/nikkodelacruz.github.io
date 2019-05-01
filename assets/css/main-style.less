@@ -924,16 +924,30 @@ body{
 			border: 2px solid @color-danger;
 		}
 
+		input[type="submit"]{
+			float: right;
+		}
+
+	}
+
+	.clearfix{
+		@media @mobile, @tablet{
+			display: none;
+		}
 	}
 
 	ul.contact-list{
+		// text-align: center;
+		@media @mobile, @tablet{
+			float: left;
+		}
 		& > li{
 			display: inline-block;
 			margin: 0 5px;
 			a{
 			    color: #fff;
-			    width: 70px;
-			    height: 70px;
+			    width: 50px;
+			    height: 50px;
 			    vertical-align: middle;
 			    display: flex;
 			    justify-content: center;
@@ -942,7 +956,7 @@ body{
 				color: #fff;
 				transition: 0.5s;
 			    background: @color-red;
-			    border-radius: 10px;
+			    border-radius: 50%;
 				&:hover{
 					color: #fff;
 					border-radius: 0;

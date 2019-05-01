@@ -79,7 +79,7 @@
     		e.preventDefault();
     		$(this).toggleClass('open');
     		$('.global-nav-wrapper').toggleClass('open');
-    		$('.framebox').toggleClass('open');
+    		// $('.framebox').toggleClass('open');
     		// $('#fullpage').toggleClass('open');
 		});
 
@@ -127,26 +127,47 @@
 			var check2 = $('input[name="check2"]').val();
 
 			if (!check1 && !check2) {
-				$.ajax({
-					url: "https://usebasin.com/f/7319a84f68f2.json",
-					method: "POST",
-					dataType: "json",
-					data: {
-						name: name,
-						email: email,
-						message: message 
-					},
-					beforeSend: function(){
 
-					},
-					success: function(response){
-						console.log(response);
-					},
-					error: function(response){
-						console.log(response);
-						alert("Something went wrong, Please try again");
-					}
-				});
+				if (!name) {
+					alert('Please enter your name');
+				}else if(!email){
+					alert('Please enter your email address');
+				}else if(!message){
+					alert('Please enter your message');
+				}else{
+					$.ajax({
+						url: "https://usebasin.com/f/7319a84f68f2.json",
+						method: "POST",
+						dataType: "json",
+						data: {
+							name: name,
+							email: email,
+							message: message 
+						},
+						beforeSend: function(){
+							$('input[type="submit"]').val('Please wait...');
+							$('input[type="submit"]').attr('disabled', true);
+						},
+						success: function(response){
+							console.log(response);
+							$('input[type="submit"]').val('SUBMIT');
+							$('input[type="submit"]').attr('disabled', false);
+							$('input[name="name"]').val('');
+							$('input[name="email"]').val('');
+							$('textarea[name="message"]').val('');
+							if(response.success){
+								alert('Your message has been sent successfully');
+							}else{
+								alert('Something went wrong, Please reload the page and try agains');
+							}
+						},
+						error: function(response){
+							console.log(response);
+							alert("Something went wrong, Please try again");
+						}
+					});
+
+				}
 			}
 
 

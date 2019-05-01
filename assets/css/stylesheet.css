@@ -1135,13 +1135,26 @@ h6 {
 .contact-section form#contact-form .has-error {
   border: 2px solid #a94442;
 }
+.contact-section form#contact-form input[type="submit"] {
+  float: right;
+}
+@media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
+  .contact-section .clearfix {
+    display: none;
+  }
+}
+@media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
+  .contact-section ul.contact-list {
+    float: left;
+  }
+}
 .contact-section ul.contact-list > li {
   display: inline-block;
   margin: 0 5px;
 }
 .contact-section ul.contact-list > li a {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   vertical-align: middle;
   display: flex;
   justify-content: center;
@@ -1150,7 +1163,7 @@ h6 {
   color: #fff;
   transition: 0.5s;
   background: #E31B6D;
-  border-radius: 10px;
+  border-radius: 50%;
 }
 .contact-section ul.contact-list > li a:hover {
   color: #fff;
