@@ -273,18 +273,25 @@
                     <div class="home-section-details--right text-center">
 
                         <form method="post" id="contact-form">
-                            <input type="name" name="name" class="form-control">
-                            <input type="email" name="email" class="form-control">
-                            <textarea name="message" rows="10" class="form-control"></textarea>
-                            <input type="submit" value="Submit" name="submit" class="btn">
+                            <div class="form-row">
+                                <div class="col">
+                                    <input type="name" name="name" class="form-control has-error" placeholder="Name">
+                                </div>
+                                <div class="col">
+                                    <input type="email" name="email" class="form-control" placeholder="Email Address">
+                                </div>
+                            </div>
+                            <div class="form-row mt-2">
+                                <div class="col">
+                                    <textarea name="message" rows="5" class="form-control" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <input type="hidden" name="check1" class="d-none">
+                            <input type="text" name="check2" class="d-none">
+                            <input type="submit" value="SUBMIT" name="submit" class="btn m-3">
                         </form>
+
                         <ul class="contact-list">
-                            <li>
-                                <a href="mailto:nikkodc12@gmail.com" >
-                                    <i class="mdi mdi-gmail"></i>
-                                    <span>Gmail</span>
-                                </a>
-                            </li>
                             <li>
                                 <a href="skype:nikkodc12?chat" >
                                     <i class="mdi mdi-skype"></i>   

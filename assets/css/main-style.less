@@ -917,14 +917,22 @@ body{
 }
 
 .contact-section{
+	form#contact-form{
+
+		.has-error{
+			border: 2px solid @color-danger;
+		}
+
+	}
+
 	ul.contact-list{
 		& > li{
 			display: inline-block;
 			margin: 0 5px;
 			a{
 			    color: #fff;
-			    width: 80px;
-			    height: 80px;
+			    width: 70px;
+			    height: 70px;
 			    vertical-align: middle;
 			    display: flex;
 			    justify-content: center;
@@ -933,7 +941,7 @@ body{
 				color: #fff;
 				transition: 0.5s;
 			    background: @color-red;
-			    border-radius: 50%;
+			    border-radius: 10px;
 				&:hover{
 					color: #fff;
 					border-radius: 0;
@@ -941,7 +949,7 @@ body{
 			}
 			i.mdi{
 				line-height: 1;
-				font-size: 25px;
+				font-size: 20px;
 			}
 			span{
 				display: block;

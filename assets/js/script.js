@@ -123,28 +123,34 @@
 			var email = $('input[name="email"]').val();
 			var message = $('textarea[name="message"]').val();
 
-			$.ajax({
-				url: "https://usebasin.com/f/7319a84f68f2.json",
-				method: "POST",
-				dataType: "json",
-				data: {
-					name: name,
-					email: email,
-					message: message 
-				},
-				beforeSend: function(){
+			var check1 = $('input[name="check1"]').val();
+			var check2 = $('input[name="check2"]').val();
 
-				},
-				success: function(response){
+			if (!check1 && !check2) {
+				$.ajax({
+					url: "https://usebasin.com/f/7319a84f68f2.json",
+					method: "POST",
+					dataType: "json",
+					data: {
+						name: name,
+						email: email,
+						message: message 
+					},
+					beforeSend: function(){
 
-					console.log(response);
+					},
+					success: function(response){
+						console.log(response);
+					},
+					error: function(response){
+						console.log(response);
+						alert("Something went wrong, Please try again");
+					}
+				});
+			}
 
-				},
-				error: function(response){
-					console.log(response);
-					alert("Something went wrong, Please try again");
-				}
-			});
+
+			
 		});
 
 
