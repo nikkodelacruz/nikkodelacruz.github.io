@@ -217,6 +217,9 @@ a:hover {
   background-position: center;
   background-size: cover;
 }
+.convert-bg.position--top {
+  background-position: top;
+}
 .bg-fixed {
   background-attachment: fixed;
 }
@@ -1001,9 +1004,6 @@ h6 {
   position: relative;
 }
 @media only screen and (min-width: 950px) and (max-width: 1440px) {
-  .slide.projects-slide .fp-tableCell {
-    vertical-align: bottom;
-  }
 }
 .slide .projects-slide__label {
   position: relative;
@@ -1013,7 +1013,6 @@ h6 {
   margin: 0 5%;
   border-bottom: 5px solid #E31B6D;
   padding-bottom: 5px;
-  margin-bottom: 10px;
 }
 .slide .slider {
   position: fixed;
@@ -1052,6 +1051,7 @@ h6 {
   padding: 0;
   margin: 0;
   text-align: center;
+  margin-top: 30px;
 }
 .my-projects-section ul.project-lists > li {
   width: 30%;
@@ -1121,24 +1121,40 @@ h6 {
   transform: translateY(-220px);
   transition: 0.5s;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a {
+.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a.projec-lists__link {
   color: #E31B6D;
   border: 1px solid;
   padding: 10px 20px;
   margin-top: 10px;
   transition: 0.5s;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a:hover {
+.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a.projec-lists__link:hover {
   color: #fff;
   background: #E31B6D;
+}
+.contact-section form#contact-form .has-error {
+  border: 2px solid #a94442;
+}
+.contact-section form#contact-form input[type="submit"] {
+  float: right;
+}
+@media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
+  .contact-section .clearfix {
+    display: none;
+  }
+}
+@media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
+  .contact-section ul.contact-list {
+    float: left;
+  }
 }
 .contact-section ul.contact-list > li {
   display: inline-block;
   margin: 0 5px;
 }
 .contact-section ul.contact-list > li a {
-  width: 80px;
-  height: 80px;
+  width: 50px;
+  height: 50px;
   vertical-align: middle;
   display: flex;
   justify-content: center;
@@ -1155,7 +1171,7 @@ h6 {
 }
 .contact-section ul.contact-list > li i.mdi {
   line-height: 1;
-  font-size: 25px;
+  font-size: 20px;
 }
 .contact-section ul.contact-list > li span {
   display: block;

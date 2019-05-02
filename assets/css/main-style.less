@@ -773,7 +773,7 @@ body{
 		.fp-tableCell{
 			position: relative;
 			@media @desktop{
-				vertical-align: bottom;
+				// vertical-align: bottom;
 			}
 		}
 	}
@@ -786,7 +786,6 @@ body{
 	    margin: 0 5%;
 	    border-bottom: 5px solid @color-red;
 	    padding-bottom: 5px;
-	    margin-bottom: 10px;
 	}
 
 	.slider{
@@ -835,6 +834,7 @@ body{
 		padding: 0;
 		margin: 0;
 		text-align: center;
+	    margin-top: 30px;
 		& > li{
 		    width: 30%;
 		    display: inline-block;
@@ -898,7 +898,8 @@ body{
 			        padding: 20px;
 	                transform: translateY(-220px);
 				    transition: 0.5s;
-			        a{
+
+			        a.projec-lists__link{
 			        	color: @color-red;
 			        	color: #E31B6D;
 						border: 1px solid;
@@ -917,14 +918,36 @@ body{
 }
 
 .contact-section{
+	form#contact-form{
+
+		.has-error{
+			border: 2px solid @color-danger;
+		}
+
+		input[type="submit"]{
+			float: right;
+		}
+
+	}
+
+	.clearfix{
+		@media @mobile, @tablet{
+			display: none;
+		}
+	}
+
 	ul.contact-list{
+		// text-align: center;
+		@media @mobile, @tablet{
+			float: left;
+		}
 		& > li{
 			display: inline-block;
 			margin: 0 5px;
 			a{
 			    color: #fff;
-			    width: 80px;
-			    height: 80px;
+			    width: 50px;
+			    height: 50px;
 			    vertical-align: middle;
 			    display: flex;
 			    justify-content: center;
@@ -941,7 +964,7 @@ body{
 			}
 			i.mdi{
 				line-height: 1;
-				font-size: 25px;
+				font-size: 20px;
 			}
 			span{
 				display: block;

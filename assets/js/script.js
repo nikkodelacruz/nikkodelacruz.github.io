@@ -79,7 +79,7 @@
     		e.preventDefault();
     		$(this).toggleClass('open');
     		$('.global-nav-wrapper').toggleClass('open');
-    		$('.framebox').toggleClass('open');
+    		// $('.framebox').toggleClass('open');
     		// $('#fullpage').toggleClass('open');
 		});
 
@@ -116,46 +116,63 @@
 
 		$('.fp-controlArrow').addClass('active');
 
+		$('#contact-form').submit(function(event) {
+			event.preventDefault();
 
-		$('.contact-form').submit(function(){
+			var name = $('input[name="name"]').val();
+			var email = $('input[name="email"]').val();
+			var message = $('textarea[name="message"]').val();
 
-			var name = $('input#name').val();
-			var email = $('input#email').val();
-			var message = $('textarea#message').val();
+			var check1 = $('input[name="check1"]').val();
+			var check2 = $('input[name="check2"]').val();
 
-			var checker1 = $('input#checker1').val();
-			var checker2 = $('input#checker2').val();
+			if (!check1 && !check2) {
 
-			if(checker1 || checker2){
-				alert('Something went wrong, Please try again');
-			}else{
+				if (!name) {
+					alert('Please enter your name');
+				}else if(!email){
+					alert('Please enter your email address');
+				}else if(!message){
+					alert('Please enter your message');
+				}else{
+					$.ajax({
+						url: "https://usebasin.com/f/7319a84f68f2.json",
+						method: "POST",
+						dataType: "json",
+						data: {
+							name: name,
+							email: email,
+							message: message 
+						},
+						beforeSend: function(){
+							$('input[type="submit"]').val('Please wait...');
+							$('input[type="submit"]').attr('disabled', true);
+						},
+						success: function(response){
+							console.log(response);
+							$('input[type="submit"]').val('SUBMIT');
+							$('input[type="submit"]').attr('disabled', false);
+							$('input[name="name"]').val('');
+							$('input[name="email"]').val('');
+							$('textarea[name="message"]').val('');
+							if(response.success){
+								alert('Your message has been sent successfully');
+							}else{
+								alert('Something went wrong, Please reload the page and try agains');
+							}
+						},
+						error: function(response){
+							console.log(response);
+							alert("Something went wrong, Please try again");
+						}
+					});
 
-				$.ajax({
-					url: "https://usebasin.com/f/7319a84f68f2.json",
-				  	method: "POST",
-				  	dataType: "json",
-				  	data: {
-				  		name: name,
-				  		email: email,
-				  		message: message,
-				  	},
-				  	success: function(response){
-
-				  		if(response.success){
-				  			alert();
-
-				  		}else{
-				  			alert();
-				  		}
-
-				  	}
-				});
+				}
 			}
-			return false;
+
+
+			
 		});
-
-
-
 
 
 	});
