@@ -19,7 +19,7 @@
 			navigation: true,
 			navigationTooltips: ['Home', 'About Me', 'My Projects', 'Contact Me'],
             onLeave: function(origin, destination, direction){
-                console.log(destination);
+                // console.log(destination);
 
                 if(destination.index == 0){
                     $('.header-logo').addClass('default');
@@ -115,6 +115,47 @@
 		});
 
 		$('.fp-controlArrow').addClass('active');
+
+
+		$('.contact-form').submit(function(){
+
+			var name = $('input#name').val();
+			var email = $('input#email').val();
+			var message = $('textarea#message').val();
+
+			var checker1 = $('input#checker1').val();
+			var checker2 = $('input#checker2').val();
+
+			if(checker1 || checker2){
+				alert('Something went wrong, Please try again');
+			}else{
+
+				$.ajax({
+					url: "https://usebasin.com/f/7319a84f68f2.json",
+				  	method: "POST",
+				  	dataType: "json",
+				  	data: {
+				  		name: name,
+				  		email: email,
+				  		message: message,
+				  	},
+				  	success: function(response){
+
+				  		if(response.success){
+				  			alert();
+
+				  		}else{
+				  			alert();
+				  		}
+
+				  	}
+				});
+			}
+			return false;
+		});
+
+
+
 
 
 	});
