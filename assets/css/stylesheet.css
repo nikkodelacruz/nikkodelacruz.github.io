@@ -1133,8 +1133,39 @@ h6 {
 .contact-section form#contact-form .has-error {
   border: 2px solid #a94442;
 }
+.contact-section form#contact-form input[type="text"],
+.contact-section form#contact-form input[type="email"],
+.contact-section form#contact-form textarea {
+  background: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid;
+}
+.contact-section form#contact-form ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  /* Firefox */
+}
+.contact-section form#contact-form :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: rgba(255, 255, 255, 0.5);
+}
+.contact-section form#contact-form ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: rgba(255, 255, 255, 0.5);
+}
 .contact-section form#contact-form input[type="submit"] {
   float: right;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid;
+  color: #fff;
+  transition: 0.5s;
+}
+.contact-section form#contact-form input[type="submit"]:hover {
+  background: #fff;
+  color: #000;
 }
 @media only screen and (max-width: 529px), only screen and (min-width: 530px) and (max-width: 949px) {
   .contact-section .clearfix {
