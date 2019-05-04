@@ -1065,7 +1065,7 @@ h6 {
 .my-projects-section ul.project-lists > li .project-lists__container {
   position: relative;
   height: 225px;
-  margin: 10px;
+  margin: 5px;
 }
 @media only screen and (min-width: 1441px) {
   .my-projects-section ul.project-lists > li .project-lists__container {
@@ -1074,7 +1074,6 @@ h6 {
 }
 .my-projects-section ul.project-lists > li .project-lists__container .convert-bg {
   height: 100%;
-  border-radius: 20px;
 }
 .my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__overlay {
   opacity: 1;
@@ -1106,7 +1105,6 @@ h6 {
   background: #293347;
   opacity: 0;
   transition: 0.5s;
-  border-radius: 20px;
   color: #fff;
   overflow: hidden;
 }
