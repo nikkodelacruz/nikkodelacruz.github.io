@@ -70,6 +70,7 @@ body{
 
 	.section{
 		&.active{
+			z-index: 9;
 			.home-section-background{
 			    opacity: 1;
 				z-index: 1;
@@ -769,16 +770,16 @@ body{
 
 // Fullpage Slider
 .slide{
-	&.projects-slide{
+	// &.projects-slide{
 		.fp-tableCell{
 			position: relative;
 			@media @desktop{
 				// vertical-align: bottom;
 			}
 		}
-	}
+	// }
 
-	.projects-slide__label{
+	.section-slide__label{
 		position: relative;
 	    z-index: 9;
 	    color: #fff;
@@ -789,25 +790,26 @@ body{
 	}
 
 	.slider{
-		position: fixed;
+		position: absolute;
 		font-size: 4em;
 		top: 50%;
-		color: @color-red;
+		color: @color-light-gray;
 		transform: translateY(-50%);
 		transition: 0.5s;
-		opacity: 0;
+		// opacity: 0;
+		z-index: 9;
 
 		@media @desktop-xl{
 			font-size: 8em;
 		}
 		&:hover{
-			color: #fff;
+			color: @color-black;
 		}
 		&.slider--left{
-			left: 10px;
+			left: 0;
 		}
 		&.slider--right{
-			right: 10px;
+			right: 0;
 		}
 		&.active{
 			opacity: 1;
@@ -818,17 +820,83 @@ body{
 
 // Slider arrow
 .fp-controlArrow{
+	display: none;
 	&.fp-prev,
 	&.fp-next{
 		&.active{
-			display: none;
 		}
 	}
 }
 
 // Pages section
+
+.about-me-section{
+	ul.skills-list{
+		position: relative;
+	    z-index: 1;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+	    margin-top: 30px;
+
+		& > li{
+			width: 15%;
+			// position: relative;
+			// z-index: 99;
+		    background-color: transparent;
+			
+			perspective: 1000px;
+			display: inline-block;
+
+			.skills-list__container{
+			    display: inline-block;
+				background: @color-gray;
+				position: relative;
+				width: 200px;
+				height: 200px;
+				text-align: center;
+				transition: transform 0.6s;
+				transform-style: preserve-3d;
+				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+				border-radius: 50%;
+				.convert-bg{
+					width: 100px;
+					height: 100px;
+				}
+			}
+
+			&:hover{
+				.skills-list__container{
+					transform: rotateY(180deg);
+				}
+			}
+
+			.convert-bg,
+			.flip-text{
+				position: absolute;
+				backface-visibility: hidden;
+		      	top: 50%;
+			    left: 50%;
+			    transform: translate(-50%,-50%);
+			}
+
+			.convert-bg{
+				width: 100%;
+				height: 100%;
+			    background-size: contain;
+			    background-position: center;
+			}
+
+			.flip-text{
+				transform:  translate(-50%,-50%) rotateY(180deg);
+			}
+
+		}
+	}
+}
+
 .my-projects-section{
-	ul.project-lists{
+	ul.projects-list{
 	    position: relative;
 	    z-index: 1;
 		padding: 0;
@@ -841,7 +909,7 @@ body{
 		    @media desktop-xl{
 			    width: 20%;
 		    }
-			.project-lists__container{
+			.projects-list__container{
 				position: relative;
 			    height: 225px;
 			    margin: 5px;
@@ -853,17 +921,17 @@ body{
 				    // border-radius: 10px;
 				}
 				&:hover{
-					.project-lists__overlay{
+					.projects-list__overlay{
 						opacity: 1;
 					}
-					.project-lists__title{
+					.projects-list__title{
 						opacity: 0;
 					}
-					.project-lists__description{
+					.projects-list__description{
 			            transform: translateY(0);
 					}
 				}
-				.project-lists__title{
+				.projects-list__title{
 					font-weight: bold;
 				    font-size: 2em;
 				    position: absolute;
@@ -875,7 +943,7 @@ body{
 				    border-radius: 0 0 10px 10px;
 				    transition: 0.5s;
 				}
-				.project-lists__overlay{
+				.projects-list__overlay{
 					position: absolute;
 					top: 0;
 					left: 0;
@@ -888,7 +956,7 @@ body{
 				    color: #fff;
 				    overflow: hidden;
 				}
-				.project-lists__description{
+				.projects-list__description{
 					display: flex;
 				    width: 100%;
 				    height: 100%;

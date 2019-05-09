@@ -327,6 +327,9 @@ h6 {
     top: 10px;
   }
 }
+.main-container .section.active {
+  z-index: 9;
+}
 .main-container .section.active .home-section-background {
   opacity: 1;
   z-index: 1;
@@ -1000,12 +1003,12 @@ h6 {
   font-weight: bold;
   text-transform: uppercase;
 }
-.slide.projects-slide .fp-tableCell {
+.slide .fp-tableCell {
   position: relative;
 }
 @media only screen and (min-width: 950px) and (max-width: 1440px) {
 }
-.slide .projects-slide__label {
+.slide .section-slide__label {
   position: relative;
   z-index: 9;
   color: #fff;
@@ -1015,13 +1018,13 @@ h6 {
   padding-bottom: 5px;
 }
 .slide .slider {
-  position: fixed;
+  position: absolute;
   font-size: 4em;
   top: 50%;
-  color: #E31B6D;
+  color: rgba(11, 18, 24, 0.5);
   transform: translateY(-50%);
   transition: 0.5s;
-  opacity: 0;
+  z-index: 9;
 }
 @media only screen and (min-width: 1441px) {
   .slide .slider {
@@ -1029,23 +1032,22 @@ h6 {
   }
 }
 .slide .slider:hover {
-  color: #fff;
+  color: #0B1218;
 }
 .slide .slider.slider--left {
-  left: 10px;
+  left: 0;
 }
 .slide .slider.slider--right {
-  right: 10px;
+  right: 0;
 }
 .slide .slider.active {
   opacity: 1;
   z-index: 2;
 }
-.fp-controlArrow.fp-prev.active,
-.fp-controlArrow.fp-next.active {
+.fp-controlArrow {
   display: none;
 }
-.my-projects-section ul.project-lists {
+.about-me-section ul.skills-list {
   position: relative;
   z-index: 1;
   padding: 0;
@@ -1053,38 +1055,88 @@ h6 {
   text-align: center;
   margin-top: 30px;
 }
-.my-projects-section ul.project-lists > li {
+.about-me-section ul.skills-list > li {
+  width: 15%;
+  background-color: transparent;
+  perspective: 1000px;
+  display: inline-block;
+}
+.about-me-section ul.skills-list > li .skills-list__container {
+  display: inline-block;
+  background: #828282;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+.about-me-section ul.skills-list > li .skills-list__container .convert-bg {
+  width: 100px;
+  height: 100px;
+}
+.about-me-section ul.skills-list > li:hover .skills-list__container {
+  transform: rotateY(180deg);
+}
+.about-me-section ul.skills-list > li .convert-bg,
+.about-me-section ul.skills-list > li .flip-text {
+  position: absolute;
+  backface-visibility: hidden;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.about-me-section ul.skills-list > li .convert-bg {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+}
+.about-me-section ul.skills-list > li .flip-text {
+  transform: translate(-50%, -50%) rotateY(180deg);
+}
+.my-projects-section ul.projects-list {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  margin-top: 30px;
+}
+.my-projects-section ul.projects-list > li {
   width: 30%;
   display: inline-block;
 }
 @media desktop-xl {
-  .my-projects-section ul.project-lists > li {
+  .my-projects-section ul.projects-list > li {
     width: 20%;
   }
 }
-.my-projects-section ul.project-lists > li .project-lists__container {
+.my-projects-section ul.projects-list > li .projects-list__container {
   position: relative;
   height: 225px;
   margin: 5px;
 }
 @media only screen and (min-width: 1441px) {
-  .my-projects-section ul.project-lists > li .project-lists__container {
+  .my-projects-section ul.projects-list > li .projects-list__container {
     height: 450px;
   }
 }
-.my-projects-section ul.project-lists > li .project-lists__container .convert-bg {
+.my-projects-section ul.projects-list > li .projects-list__container .convert-bg {
   height: 100%;
 }
-.my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__overlay {
+.my-projects-section ul.projects-list > li .projects-list__container:hover .projects-list__overlay {
   opacity: 1;
 }
-.my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__title {
+.my-projects-section ul.projects-list > li .projects-list__container:hover .projects-list__title {
   opacity: 0;
 }
-.my-projects-section ul.project-lists > li .project-lists__container:hover .project-lists__description {
+.my-projects-section ul.projects-list > li .projects-list__container:hover .projects-list__description {
   transform: translateY(0);
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__title {
+.my-projects-section ul.projects-list > li .projects-list__container .projects-list__title {
   font-weight: bold;
   font-size: 2em;
   position: absolute;
@@ -1096,7 +1148,7 @@ h6 {
   border-radius: 0 0 10px 10px;
   transition: 0.5s;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__overlay {
+.my-projects-section ul.projects-list > li .projects-list__container .projects-list__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -1108,7 +1160,7 @@ h6 {
   color: #fff;
   overflow: hidden;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description {
+.my-projects-section ul.projects-list > li .projects-list__container .projects-list__description {
   display: flex;
   width: 100%;
   height: 100%;
@@ -1119,14 +1171,14 @@ h6 {
   transform: translateY(-220px);
   transition: 0.5s;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a.projec-lists__link {
+.my-projects-section ul.projects-list > li .projects-list__container .projects-list__description a.projec-lists__link {
   color: #E31B6D;
   border: 1px solid;
   padding: 10px 20px;
   margin-top: 10px;
   transition: 0.5s;
 }
-.my-projects-section ul.project-lists > li .project-lists__container .project-lists__description a.projec-lists__link:hover {
+.my-projects-section ul.projects-list > li .projects-list__container .projects-list__description a.projec-lists__link:hover {
   color: #fff;
   background: #E31B6D;
 }

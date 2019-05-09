@@ -19,7 +19,7 @@
 			navigation: true,
 			navigationTooltips: ['Home', 'About Me', 'My Projects', 'Contact Me'],
             onLeave: function(origin, destination, direction){
-                // console.log(destination);
+                console.log(direction);
 
                 if(destination.index == 0){
                     $('.header-logo').addClass('default');
@@ -28,6 +28,7 @@
                     $('.header-logo').removeClass('default');                   
                     $('.main-section__today').removeClass('default');
                 }
+
                 if(destination.index == 4){
                     $('#section3 .home-section-background__index').animate({opacity:0},"slow");
                     $('#section3 .home-section-background').addClass('opc');
@@ -37,17 +38,18 @@
                 }
 
                 if(destination.index != 4){
-                	$('.my-projects-section .slider').removeClass('active');
+                	$('.section-slider .slider').removeClass('active');
                 }
             },
             onSlideLeave: function(section, origin, destination, direction){
             	// page slider
+            	// alert(destination.index)
                 if(destination.index >= 1){
-                	$('.my-projects-section .home-section-background__index').addClass('d-none');
-                	$('.fp-controlArrow').removeClass('active');
+                	$('.section-slider .home-section-background__index').addClass('d-none');
+                	// $('.my-projects-section .fp-controlArrow').removeClass('active');
                 }else{
-                	$('.my-projects-section .home-section-background__index').removeClass('d-none');
-                	$('.fp-controlArrow').addClass('active');
+                	$('.section-slider .home-section-background__index').removeClass('d-none');
+                	// $('.my-projects-section .fp-controlArrow').addClass('active');
                 }
             },
             afterRender: function(){
@@ -114,7 +116,7 @@
 		    }
 		});
 
-		$('.fp-controlArrow').addClass('active');
+		// $('.fp-controlArrow').addClass('active');
 
 		$('#contact-form').submit(function(event) {
 			event.preventDefault();
