@@ -17,6 +17,7 @@
             css3:false,
             scrollingSpeed: 500,
 			navigation: true,
+		    // responsiveWidth: 900,
 			navigationTooltips: ['Home', 'About Me', 'My Projects', 'Contact Me'],
             onLeave: function(origin, destination, direction){
                 console.log(direction);

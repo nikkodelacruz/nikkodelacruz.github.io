@@ -1021,7 +1021,7 @@ h6 {
   position: absolute;
   font-size: 4em;
   top: 50%;
-  color: rgba(11, 18, 24, 0.5);
+  color: #fff;
   transform: translateY(-50%);
   transition: 0.5s;
   z-index: 9;
@@ -1032,7 +1032,7 @@ h6 {
   }
 }
 .slide .slider:hover {
-  color: #0B1218;
+  color: #08fdd8;
 }
 .slide .slider.slider--left {
   left: 0;
@@ -1063,7 +1063,7 @@ h6 {
 }
 .about-me-section ul.skills-list > li .skills-list__container {
   display: inline-block;
-  background: #828282;
+  background: rgba(11, 18, 24, 0.5);
   position: relative;
   width: 200px;
   height: 200px;
@@ -1095,6 +1095,7 @@ h6 {
   background-position: center;
 }
 .about-me-section ul.skills-list > li .flip-text {
+  color: #E31B6D;
   transform: translate(-50%, -50%) rotateY(180deg);
 }
 .my-projects-section ul.projects-list {

@@ -793,7 +793,7 @@ body{
 		position: absolute;
 		font-size: 4em;
 		top: 50%;
-		color: @color-light-gray;
+		color: #fff;
 		transform: translateY(-50%);
 		transition: 0.5s;
 		// opacity: 0;
@@ -803,7 +803,7 @@ body{
 			font-size: 8em;
 		}
 		&:hover{
-			color: @color-black;
+			color: @color-blue;
 		}
 		&.slider--left{
 			left: 0;
@@ -841,16 +841,13 @@ body{
 
 		& > li{
 			width: 15%;
-			// position: relative;
-			// z-index: 99;
 		    background-color: transparent;
-			
 			perspective: 1000px;
 			display: inline-block;
 
 			.skills-list__container{
 			    display: inline-block;
-				background: @color-gray;
+				background: @color-light-gray;
 				position: relative;
 				width: 200px;
 				height: 200px;
@@ -888,7 +885,8 @@ body{
 			}
 
 			.flip-text{
-				transform:  translate(-50%,-50%) rotateY(180deg);
+				color: @color-red;
+				transform: translate(-50%,-50%) rotateY(180deg);
 			}
 
 		}
