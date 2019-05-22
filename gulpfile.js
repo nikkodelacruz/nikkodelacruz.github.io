@@ -5,6 +5,7 @@ const { src, dest, parallel, watch } = require('gulp');
 const less = require('gulp-less');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
+const cleanCSS = require('gulp-clean-css');
 
 // Depracated
 // gulp default
@@ -33,9 +34,11 @@ function js(){
 
 /* STYLE */
 // Convert LESS to CSS
+// Minify CSS
 function css(){
 	return src('assets/css/less/*.less')
 	.pipe(less())
+	.pipe(cleanCSS())
 	.pipe(dest('dist/css'))
 }
 
