@@ -6,6 +6,7 @@ const less = require('gulp-less');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
+const rename = require('gulp-rename');
 
 // Depracated
 // gulp default
@@ -39,6 +40,7 @@ function css(){
 	return src('assets/css/less/*.less')
 	.pipe(less())
 	.pipe(cleanCSS())
+	.pipe(rename( {basename:'style',suffix:'.min'} ))
 	.pipe(dest('dist/css'))
 }
 
