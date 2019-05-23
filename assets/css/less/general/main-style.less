@@ -79,6 +79,12 @@ body{
 		.opc{
 			opacity: 1;
 		}
+
+		&.fp-section{
+			@media @mobile, @tablet{
+				height: auto !important;
+			}
+		}
 	}
 
 	// First section
@@ -222,6 +228,9 @@ body{
 		    @media @mobile, @tablet{
 			    width: 86%;
 		    }
+		    @media @mobile{
+		    	display: none;
+		    }
 		    .home-section-background__line{
 		    	border-color: #fff;
 		    	border-top: 1px solid #fff;
@@ -278,6 +287,9 @@ body{
 			        margin-left: 20%;
 				    margin-top: 4%;
 			    }
+			    @media @mobile{
+			    	margin-left: 0;
+			    }
 		    }
 
 		    .home-section-details__separator{
@@ -310,7 +322,9 @@ body{
 		    	@media @mobile, @tablet{
 			    	// height: auto;
 				    height: 58vh;
-
+		    	}
+		    	@media @mobile{
+		    		height: unset;
 		    	}
 
 		    	.home-section-details__title{
@@ -356,9 +370,16 @@ body{
     		    top: unset;
 			    left: 0;
 			    font-size: 10px;
+		        padding-bottom: 10%;
 	    	}
 	    	@media @desktop, @desktop-xl{
 		    	width: 40%;
+	    	}
+	    	@media @mobile{
+	    		position: relative;
+	    		transform: unset;
+    		    margin-top: 10px;
+			    text-align: left !important;
 	    	}
 	    	.arrow-slider a{
 				color: @color-red;
@@ -398,6 +419,12 @@ body{
 		background-color: @color-black;
 	    position: relative;
 	    z-index: 9;
+
+	    @media @mobile{
+    	    margin-top: 20px;
+		    position: absolute;
+	    }
+
 		.global-footer{
 		    padding: 65px 0 80px;
 
@@ -432,10 +459,10 @@ body{
 				    display: flex;
 				    -ms-flex: 0;
 				    flex: 0;
-				    margin-bottom: 20px;
+				    // margin-bottom: 20px;
 				    width: 100%;
 			        width: auto;
-				    margin-bottom: 36px;
+				    // margin-bottom: 36px;
 				    color: #fff;
 					
 					@media @mobile, @tablet{
@@ -502,6 +529,7 @@ body{
 
 			}
 		}
+
 	}
 
 	// Menu section
@@ -844,6 +872,11 @@ body{
 		    background-color: transparent;
 			perspective: 1000px;
 			display: inline-block;
+			
+			@media @mobile, @tablet{
+			    width: 20%;
+			    margin: 20px;
+			}
 
 			.skills-list__container{
 			    display: inline-block;
@@ -860,6 +893,14 @@ body{
 					width: 100px;
 					height: 100px;
 				}
+				@media @mobile, @tablet{
+					width: 100px;
+					height: 100px;
+					.convert-bg{
+						width: 50px;
+					    height: 50px;
+					}
+				}
 			}
 
 			&:hover{
@@ -875,6 +916,11 @@ body{
 		      	top: 50%;
 			    left: 50%;
 			    transform: translate(-50%,-50%);
+				@media @mobile, @tablet{
+					h2{
+						font-size: 20px;
+					}
+			    }
 			}
 
 			.convert-bg{
@@ -916,6 +962,7 @@ body{
 			    }
 				.convert-bg{
 					height: 100%;
+					background-position: top left;
 				    // border-radius: 10px;
 				}
 				&:hover{
@@ -976,6 +1023,16 @@ body{
 					    	color: #fff;
 					    	background: @color-red;
 					    }
+				        @media @mobile{
+				        	padding: 5px;
+						    font-size: 15px;
+				        }
+			        }
+
+			        @media @mobile{
+			        	h1{
+			        		font-size: 20px;
+			        	}
 			        }
 				}
 			}
@@ -1066,4 +1123,27 @@ body{
 			}
 		}
 	}
+}
+
+/* Scrollbar style */
+
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: @color-black; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: @color-red; 
+	border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	// background: #555; 
 }

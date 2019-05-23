@@ -7,6 +7,7 @@ const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 
 // Depracated
 // gulp default
@@ -26,8 +27,12 @@ const rename = require('gulp-rename');
 /* JS */
 // Minify script
 // Concatinate(combine) all script files into one file
+// Babel
 function js(){
 	return src('assets/js/*.js')
+	.pipe(babel({
+		presets: ['@babel/env']
+	}))
 	.pipe(concat('script.min.js'))
 	.pipe(uglify())
 	.pipe(dest('dist/js'))
