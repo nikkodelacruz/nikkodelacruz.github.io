@@ -1,13 +1,14 @@
 # nikkodelacruz.github.io
 
-<h1>Github Portfolio</h1>
+<h1>Github Portfolio built with Gulp js</h1>
 
-<h2>Built with Gulp js</h2>
-<ul>Plugins used:</ul>
-<li><code>gulp-less</code> - Amazing Time-saving synchronized browser testing</li>
-<li>gulp-uglify</li>
-<li>gulp-concat</li>
-<li>gulp-clean-css</li>
-<li>gulp-rename</li>
-<li>gulp-babel</li>
-<li>browser-sync</li>
+<h3>Plugins used:</h3>
+<ul>
+<li><code>gulp-less</code> - Compile CSS to LESS</li>
+<li><code>gulp-uglify</code> - Minifies JS files</li>
+<li><code>gulp-concat</code> - To combine js/css files</li>
+<li><code>gulp-clean-css</code> - Minifies CSS files</li>
+<li><code>gulp-rename</code> - To easily rename files</li>
+<li><code>gulp-babel babel/core @babel/preset-env</code> - To convert JS code into a backwards compatible version in current or old browsers</li>
+<li><code>browser-sync</code> - Amazing Time-saving synchronized browser testing</li>
+</ul>
