@@ -20,8 +20,7 @@
 		    responsiveWidth: 530,
 			navigationTooltips: ['Home', 'About Me', 'My Projects', 'Contact Me'],
             onLeave: function(origin, destination, direction){
-                console.log(direction);
-
+                // console.log(direction);
                 if(destination.index == 0){
                     $('.header-logo').addClass('default');
                     $('.main-section__today').addClass('default');

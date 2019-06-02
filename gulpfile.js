@@ -8,6 +8,8 @@ const concat = require('gulp-concat');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const babel = require('gulp-babel');
+const browserSync = require('browser-sync').create();
+const reload = browserSync.reload;
 
 // Depracated
 // gulp default
@@ -36,6 +38,7 @@ function js(){
 	.pipe(concat('script.min.js'))
 	.pipe(uglify())
 	.pipe(dest('dist/js'))
+	.pipe(browserSync.stream())
 }
 
 /* STYLE */
@@ -47,6 +50,16 @@ function css(){
 	.pipe(cleanCSS())
 	.pipe(rename( {basename:'style',suffix:'.min'} ))
 	.pipe(dest('dist/css'))
+	.pipe(browserSync.stream())
+}
+
+/* BROWSER SYNC */
+function browsersync(){
+	var files = 'index.html';
+	browserSync.init(files, {
+		proxy: 'localhost/portfolio',
+		injectChanges: true
+	});
 }
 
 // run these tasks on gulp command
@@ -54,6 +67,7 @@ function css(){
 // exports.css = css;
 // exports.default = parallel( js, css );
 exports.default = function(){
+	watch('index.html',browsersync)
 	watch('assets/js/*.js',js);
 	watch('assets/css/less/**/*.less',css);
 	

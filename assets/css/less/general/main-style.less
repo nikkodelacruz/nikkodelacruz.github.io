@@ -815,6 +815,10 @@ body{
 	    margin: 0 5%;
 	    border-bottom: 5px solid @color-red;
 	    padding-bottom: 5px;
+	    
+	    @media @mobile{
+	    	margin-top: 30px;
+	    }
 	}
 
 	.slider{
@@ -868,14 +872,13 @@ body{
 	    margin-top: 30px;
 
 		& > li{
-			width: 15%;
+			width: 17%;
 		    background-color: transparent;
 			perspective: 1000px;
 			display: inline-block;
 			
 			@media @mobile, @tablet{
-			    width: 20%;
-			    margin: 20px;
+			    width: 25%;
 			}
 
 			.skills-list__container{
@@ -889,6 +892,7 @@ body{
 				transform-style: preserve-3d;
 				box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 				border-radius: 50%;
+				margin-bottom: 30px;
 				.convert-bg{
 					width: 100px;
 					height: 100px;
