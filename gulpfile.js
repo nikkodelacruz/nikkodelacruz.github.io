@@ -67,7 +67,7 @@ function browsersync(){
 // exports.css = css;
 // exports.default = parallel( js, css );
 exports.default = function(){
-	watch('index.html',browsersync)
+	// watch('index.html',browsersync)
 	watch('assets/js/*.js',js);
 	watch('assets/css/less/**/*.less',css);
 	
