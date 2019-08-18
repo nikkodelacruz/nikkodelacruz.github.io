@@ -10,6 +10,8 @@
 
 	$(document).ready(function() {
 
+		
+
 
 		/* Fullpage config */
 		var myFullpage = new fullpage('#fullpage', {

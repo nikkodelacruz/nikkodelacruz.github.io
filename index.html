@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Nikko Dela Cruz | Web Developer">
     <meta name="twitter:description" content="Dreamer, Believer, Achiever">
     <meta name="twitter:image" content="https://github.com/nikkodelacruz/nikkodelacruz.github.io/blob/master/assets/images/website.png?raw=true">
-    
+
     <!-- Styles -->
 	<link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
 	<link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
@@ -48,6 +48,12 @@
     <script src="assets/js/bootstrap/bootstrap.min.js"></script>
     <!-- <script src="dist/js/fullpage.js"></script> -->
 	<script src="dist/js/script.min.js"></script> <!-- custom script -->
+
+    <!-- Libraries -->
+    <!-- Fancybox -->
+    <link rel="stylesheet" type="text/css" href="assets/js/fancybox/dist/jquery.fancybox.min.css">
+    <script src="assets/js/fancybox/dist/jquery.fancybox.min.js"></script>
+
 
 </head>
 <body class="d-none">
@@ -477,33 +483,60 @@
                                 <div class="projects-list__overlay">
                                     <div class="projects-list__description">
                                         <h1>Home & Beyond</h1>
-                                        <!-- <a class="projec-lists__link" href="#" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a> -->
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link" href="http://homeandbeyond.ph/" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="projects-list__container">
-                                <div class="convert-bg" data-bg="assets/images/andoks.png">
+                                <div class="convert-bg" data-bg="assets/images/norde.png">
                                 </div>
                                 <div class="projects-list__overlay">
                                     <div class="projects-list__description">
-                                        <h1>Andoks</h1>
-                                        <p>Product category page</p>
-                                        <a class="projec-lists__link" href="https://andoks.com.ph/product-category/litson-manok" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <h1>Norde</h1>
+                                        <a class="projec-lists__link" href="http://norde.com.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
                             <div class="projects-list__container">
-                                <div class="convert-bg position--top" data-bg="assets/images/jmdormitel.png">
+                                <div class="convert-bg position--top" data-bg="assets/images/livechat.png">
                                 </div>
                                 <div class="projects-list__overlay">
                                     <div class="projects-list__description">
-                                        <h1>JMDORMITEL</h1>
-                                        <p>Rooms page</p>
-                                        <a class="projec-lists__link" href="http://jmdormitel.ph/room-types/" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <h1>Livechat</h1>
+                                        <p>Node JS, Socket.IO</p>
+
+                                        <a class="projec-lists__link" href="assets/images/livechat.png" 
+                                            data-fancybox="images-preview" 
+                                            data-width="1000" data-height="1000"
+                                            data-thumbs='{"autoStart":true}'
+                                            >
+                                            View Images <i class="mdi mdi-arrow-right"></i>
+                                        </a>
+                                        
+                                        <!-- lightbox gallery -->
+                                        <div style="display: none;">
+                                            <a href="assets/images/livechat-list.png" data-fancybox="images-preview" 
+                                            data-width="1500" data-height="1000"
+                                            data-thumb="assets/images/livechat-list.png"
+                                            data-caption="List of all messages from live chat"
+                                            ></a>
+                                            <a href="assets/images/livechat-messages.png" data-fancybox="images-preview" 
+                                            data-width="1500" data-height="1000"
+                                            data-thumb="assets/images/livechat-messages.png"
+                                            data-caption="List of all messages from a selected user"
+                                            ></a>
+                                            <a href="assets/images/livechat-convo.png" data-fancybox="images-preview" 
+                                            data-width="1500" data-height="1000"
+                                            data-thumb="assets/images/livechat-convo.png"
+                                            data-caption="Conversation of a user to another user"
+                                            ></a>
+                                        </div>
+                               
                                     </div>
                                 </div>
                             </div>
