@@ -10,8 +10,8 @@
 
 	$(document).ready(function() {
 
+		let vantaNetLoaded = false;
 		
-
 
 		/* Fullpage config */
 		var myFullpage = new fullpage('#fullpage', {
@@ -22,13 +22,18 @@
 		    responsiveWidth: 530,
 			navigationTooltips: ['Home', 'About Me', 'My Projects', 'Contact Me'],
             onLeave: function(origin, destination, direction){
+            	console.log(vantaNetLoaded);
                 // console.log(direction);
                 if(destination.index == 0){
                     $('.header-logo').addClass('default');
                     $('.main-section__today').addClass('default');
+                    $('.scroll-down-animate').removeClass('disaled');
                 }else{
                     $('.header-logo').removeClass('default');                   
                     $('.main-section__today').removeClass('default');
+                    $('.scroll-down-animate').addClass('disaled');
+
+
                 }
 
                 if(destination.index == 4){
@@ -42,6 +47,14 @@
                 if(destination.index != 4){
                 	$('.section-slider .slider').removeClass('active');
                 }
+
+                // if(destination.index == 2){
+                // 	vantaNetLoaded = true;
+                	
+                // }
+
+
+
             },
             onSlideLeave: function(section, origin, destination, direction){
             	// page slider
@@ -61,6 +74,7 @@
             afterSlideLoad: function(section, origin, destination, direction){
             },
             afterLoad: function(origin, destination, direction){ 
+
             }
         });
 
@@ -173,11 +187,57 @@
 
 				}
 			}
-
-
 			
 		});
 
+		// Magic mouse
+		const options = {
+		    "cursorOuter": "circle-basic",
+		    "hoverEffect": "circle-move",
+		    "hoverItemMove": false,
+		    "defaultCursor": false,
+		    "outerWidth": 30,
+		    "outerHeight": 30
+	    };
+	    magicMouse(options);
+
+	    // Typeit JS
+	    new TypeIt('#name', {
+        	speed: 50
+      	})
+  		.pause(3000)
+  		.type("I'm Nikko Dela Cruz")
+  		.go();
+
+
+		//Vanta js
+  		setTimeout(() => {
+			VANTA.BIRDS({
+			  el: "#vantaBirds",
+			  mouseControls: true,
+			  touchControls: true,
+			  gyroControls: false,
+			  minHeight: 1000.00,
+			  minWidth: 2000.00,
+			  scale: 1.00,
+			  scaleMobile: 1.00
+			})
+  		}, 1000);
+
+  		setTimeout(() => {
+			VANTA.NET({
+				el: "#vantaNet",
+				color: 0xff2e63,
+				mouseControls: true,
+				touchControls: true,
+				gyroControls: false,
+				minHeight: 1000.00,
+				minWidth: 2000.00,
+				scale: 1.00,
+				scaleMobile: 1.00
+			})
+  		}, 2000);
+  		
 
 	});
 

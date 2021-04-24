@@ -54,6 +54,17 @@
     <link rel="stylesheet" type="text/css" href="assets/js/fancybox/dist/jquery.fancybox.min.css">
     <script src="assets/js/fancybox/dist/jquery.fancybox.min.js"></script>
 
+    <!-- Magic mouse -->
+    <link rel="stylesheet" href="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic-mouse-1.1.css" />
+    <script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1613706377/magicmouse/magic_mouse-1.1.js"></script>
+
+    <!-- Typeit js -->
+    <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+
+    <!-- Vanta JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
 
 </head>
 <body class="d-none">
@@ -74,11 +85,20 @@
         </a>
 
         <div id="fullpage">
+
+            <!-- scroll down -->
+            <a href="#aboutMe" class="scroll-down-animate">
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+              <div class="chevron"></div>
+            </a>
             
             <!-- Main section -->
             <div class="section main-section" id="section0">
                 <div class="bg-image" style="background-image: url(assets/images/nikko.jpg);">
-                    <div class="main-section__title">Hello,<br>I'm Nikko Dela Cruz<hr><span>Web Developer</span></div>
+                    <div class="main-section__title">Hello,<br>
+                    <div id="name"></div>
+                    <hr><span>Web Developer and a Freelancer</span></div>
                 </div>
             </div>
 
@@ -88,7 +108,7 @@
                 <div class="slide" id="slide1" >
 
                     <!-- Background image-->
-                    <div class="home-section-background convert-bg" data-bg="assets/images/dev_bg3.jpg">
+                    <div id="vantaBirds" class="home-section-background" style="background-color: #07192f;">
                         <div aria-hidden="false" class="home-section-background__index">
                             01.<span class="home-section-background__line"></span>
                         </div>
@@ -99,17 +119,17 @@
                         <div class="home-section-details">
                             <h5 class="home-section-details__eyebrow">About me.</h5>
                             <div class="home-section-details__container">
-                                <h2 class="home-section-details__title">
-                                    <a>Want to know me?</a>
-                                </h2>
+                                <h2 id="aboutText" class="home-section-details__title">Want to know me?</h2>
                                 <div class="home-section-details__subtitle">
                                     <div class="home-section-details__subtitle-wrapper">
                                         <hr class="home-section-details__separator">
                                         <div class="home-section-details__description">
-                                            <a>
+                                            <p>
                                                 <!-- Hi! Nice to meet you.<br/> -->
-                                                I'm a wordpress developer with a great passion in developing interactive corporate and E-commerce website. I love making things extraordinary.
-                                            </a>
+                                                For the past 4 years, I was involved in hundreds of projects and helped people and businesses build their website.
+                                                I approach each problem as a learning experience to be a better web developer.<br>
+                                                -I love making things EXTRAORDINARY.-
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -117,7 +137,7 @@
                         </div>
                         <div class="home-section-details--right text-right">
                             <div class="arrow-slider">
-                                <a href="#aboutMe/1">
+                                <a href="#aboutMe/1" class="magic-hover magic-hover__square">
                                     <span>Learn More</span>
                                     <i class="mdi mdi-chevron-right"></i>
                                 </a>
@@ -129,6 +149,7 @@
                             </div>
                         </div> -->
                     </div>
+
                 </div>
                 
                 <!-- My Skills -->
@@ -295,6 +316,42 @@
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <div class="skills-list__container">
+                                <div class="convert-bg position--top" data-bg="assets/images/vue.png">
+                                </div>
+                                <div class="flip-text">
+                                    <h2>Vue js</h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skills-list__container">
+                                <div class="convert-bg position--top" data-bg="assets/images/shopify.png">
+                                </div>
+                                <div class="flip-text">
+                                    <h2>Shopify</h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skills-list__container">
+                                <div class="convert-bg position--top" data-bg="assets/images/android.png">
+                                </div>
+                                <div class="flip-text">
+                                    <h2>Android Studio</h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="skills-list__container">
+                                <div class="convert-bg position--top" data-bg="assets/images/unity.png">
+                                </div>
+                                <div class="flip-text">
+                                    <h2>Unity3D</h2>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 
@@ -305,7 +362,7 @@
 
                 <div class="slide" id="pslide1" >
                     <!-- Background image-->
-                    <div class="home-section-background convert-bg" data-bg="assets/images/dev_bg1.jpg">
+                    <div id="vantaNet" class="home-section-background" style="background-color: #23153c;">
                         <div aria-hidden="false" class="home-section-background__index">
                             02.<span class="home-section-background__line"></span>
                         </div>
@@ -322,8 +379,9 @@
                                     <div class="home-section-details__subtitle-wrapper">
                                         <hr class="home-section-details__separator">
                                         <div class="home-section-details__description">
-                                            <a>
-                                            Feel free to take a look to my projects. I'm producing high quality responsive websites and exceptional user experience</a>
+                                            <p>
+                                            Feel free to take a look to my projects. I'm producing high quality responsive websites and exceptional user experience.
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
@@ -331,7 +389,7 @@
                         </div>
                         <div class="home-section-details--right text-right">
                             <div class="arrow-slider">
-                                <a href="#myProjects/1">
+                                <a href="#myProjects/1" class="magic-hover magic-hover__square">
                                     <span>Take a Tour</span>
                                     <i class="mdi mdi-chevron-right"></i>
                                 </a>
@@ -340,7 +398,7 @@
                     </div>
                 </div>
                 
-                <!-- My projects -->
+                <!-- My projects1 -->
                 <div class="slide projects-slide" id="pslide2" >
 
                     <a href="#myProjects" class="slider slider--left">
@@ -351,23 +409,49 @@
                         <i class="mdi mdi-chevron-right"></i>
                     </a>
 
-                    <h1 class="section-slide__label">My Works</h1>
+                    <h1 class="section-slide__label">Selected Works</h1>
                     <ul class="projects-list">
                         <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg position--top" data-bg="assets/images/ectts.png">
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg position--top" data-bg="assets/images/magnum.png">
                                 </div>
                                 <div class="projects-list__overlay">
                                     <div class="projects-list__description">
-                                        <h1>ECTTS</h1>
-                                        <p><small>(Express City Tours Travel Services)</small></p>
-                                        <a class="projec-lists__link" href="https://expresscitytours.com" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <h1>MAGNUM</h1>
+                                        <p><small>Ceramic Coating</small></p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/magnum-full.png" data-width="1000">View <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-wordpress">
+                                <div class="convert-bg" data-bg="assets/images/norde.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Norde</h1>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="http://norde.com.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-woo">
+                                <div class="convert-bg" data-bg="assets/images/unison.png">
+                                    <!-- <div class="projects-list__title">Unison</div> -->
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Unison</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="http://unison.com.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-wordpress">
                                 <div class="convert-bg" data-bg="assets/images/marindo.png">
                                     <!-- <div class="projects-list__title">Marindo</div> -->
                                 </div>
@@ -375,12 +459,13 @@
                                     <div class="projects-list__description">
                                         <h1>Marindo</h1>
 
-                                        <a class="projec-lists__link" href="assets/images/marindo-home.png" 
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="assets/images/marindo-home.png" 
                                             data-fancybox="images-preview-2" 
                                             data-thumbs='{"autoStart":true}'
                                             data-caption="Homepage"
+                                            data-width="1000"
                                             >
-                                            View Images <i class="mdi mdi-arrow-right"></i>
+                                            View <i class="mdi mdi-arrow-right"></i>
                                         </a>
                                         
                                         <!-- lightbox gallery -->
@@ -411,35 +496,21 @@
                                 </div>
                             </div>
                         </li>
-                         <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg" data-bg="assets/images/krirub.png">
-                                    <!-- <div class="projects-list__title">KRIRUB</div> -->
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg" data-bg="assets/images/wallcrown.png">
+                                    <!-- <div class="projects-list__title">Dear Dahlia</div> -->
                                 </div>
                                 <div class="projects-list__overlay">
                                     <div class="projects-list__description">
-                                        <h1>KRIRUB</h1>
-                                        <a class="projec-lists__link" href="https://krirubindustrialsales.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <h1>Wallcrown</h1>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/wallcrown-full.png" data-width="1000">View <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
                         <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg" data-bg="assets/images/unison.png">
-                                    <!-- <div class="projects-list__title">Unison</div> -->
-                                </div>
-                                <div class="projects-list__overlay">
-                                    <div class="projects-list__description">
-                                        <h1>Unison</h1>
-                                        <p>E-commerce</p>
-                                        <a class="projec-lists__link" href="http://unison.com.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-woo">
                                 <div class="convert-bg" data-bg="assets/images/deardahlia.png">
                                     <!-- <div class="projects-list__title">Dear Dahlia</div> -->
                                 </div>
@@ -447,13 +518,29 @@
                                     <div class="projects-list__description">
                                         <h1>Dear Dahlia</h1>
                                         <p>E-commerce</p>
-                                        <a class="projec-lists__link" href="https://deardahlia.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/deardahlia.png">View <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </li>
+                        
+                    </ul>
+                </div>
+
+                <!-- My projects2 -->
+                <div class="slide projects-slide" id="pslide3">
+
+                    <a href="#myProjects/1" class="slider slider--left">
+                        <i class="mdi mdi-chevron-left"></i>
+                    </a>
+
+                    <a href="#myProjects/3" class="slider slider--right">
+                        <i class="mdi mdi-chevron-right"></i>
+                    </a>
+
+                    <ul class="projects-list">
                         <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-woo">
                                 <div class="convert-bg" data-bg="assets/images/beautystation.png">
                                     <!-- <div class="projects-list__title">Beauty Station</div> -->
                                 </div>
@@ -461,7 +548,168 @@
                                     <div class="projects-list__description">
                                         <h1>Beauty Station</h1>
                                         <p>E-commerce</p>
-                                        <a class="projec-lists__link" href="https://beautystation.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/beautystation.png">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg" data-bg="assets/images/copper.png">
+                                    <!-- <div class="projects-list__title">Dear Dahlia</div> -->
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>B. WEISS Copper</h1>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/copper-full.png" data-width="1000">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-wordpress">
+                                <div class="convert-bg" data-bg="assets/images/krirub.png">
+                                    <!-- <div class="projects-list__title">KRIRUB</div> -->
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>KRIRUB</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg" data-bg="assets/images/baby.png">
+                                    <!-- <div class="projects-list__title">KRIRUB</div> -->
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Baby Blanket</h1>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/baby.png">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-wordpress">
+                                <div class="convert-bg position--top" data-bg="assets/images/ectts.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>ECTTS</h1>
+                                        <p><small>(Express City Tours Travel Services)</small></p>
+                                        <!-- <a class="projec-lists__link" href="https://expresscitytours.com" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-woo">
+                                <div class="convert-bg" data-bg="assets/images/trisco.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>TRISCO</h1>
+                                        <p><small>(Travellers Insurance & Surety Corporation)</small></p>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="http://travellersinsuranceph.com" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                       
+                       
+                    </ul>
+                </div>
+
+
+                <!-- My projects3 -->
+                <div class="slide projects-slide" id="pslide3">
+
+                    <a href="#myProjects/2" class="slider slider--left">
+                        <i class="mdi mdi-chevron-left"></i>
+                    </a>
+
+                    <a href="#myProjects/4" class="slider slider--right">
+                        <i class="mdi mdi-chevron-right"></i>
+                    </a>
+
+                    <ul class="projects-list">
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg position--top" data-bg="assets/images/indivu.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>INDIVU</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/indivu-full.png" data-width="1000">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg" data-bg="assets/images/glass.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Glass Sink</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/glass.png">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg position--top" data-bg="assets/images/cece.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>CECE</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/cece-full.png" data-width="1000">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg position--top" data-bg="assets/images/guardians.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Guardians</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/guardians.png">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-shopify">
+                                <div class="convert-bg position--top" data-bg="assets/images/trendiese.png">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>TRENDIESE</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" data-fancybox href="assets/images/trendiese.png">View <i class="mdi mdi-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="projects-list__container p-woo">
+                                <div class="convert-bg position--top" data-bg="assets/images/home&beyond.jpg">
+                                </div>
+                                <div class="projects-list__overlay">
+                                    <div class="projects-list__description">
+                                        <h1>Home & Beyond</h1>
+                                        <p>E-commerce</p>
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="http://homeandbeyond.ph/" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -469,10 +717,10 @@
                     </ul>
                 </div>
                 
-                <!-- Other projects -->
-                <div class="slide projects-slide" id="pslide3" >
+                <!-- More projects 4 -->
+                <div class="slide projects-slide" id="pslide4" >
 
-                    <a href="#myProjects/1" class="slider slider--left">
+                    <a href="#myProjects/3" class="slider slider--left">
                         <i class="mdi mdi-chevron-left"></i>
                     </a>
 
@@ -483,7 +731,7 @@
                     <h1 class="section-slide__label">Other Projects</h1>
                     <ul class="projects-list">
                         <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-none">
                                 <div class="convert-bg" data-bg="assets/images/collins.png">
                                 </div>
                                 <div class="projects-list__overlay">
@@ -495,46 +743,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg" data-bg="assets/images/trisco.png">
-                                </div>
-                                <div class="projects-list__overlay">
-                                    <div class="projects-list__description">
-                                        <h1>TRISCO</h1>
-                                        <p><small>(Travellers Insurance & Surety Corporation)</small></p>
-                                        <p>E-commerce</p>
-                                        <a class="projec-lists__link" href="http://travellersinsuranceph.com" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg position--top" data-bg="assets/images/home&beyond.jpg">
-                                </div>
-                                <div class="projects-list__overlay">
-                                    <div class="projects-list__description">
-                                        <h1>Home & Beyond</h1>
-                                        <p>E-commerce</p>
-                                        <a class="projec-lists__link" href="http://homeandbeyond.ph/" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="projects-list__container">
-                                <div class="convert-bg" data-bg="assets/images/norde.png">
-                                </div>
-                                <div class="projects-list__overlay">
-                                    <div class="projects-list__description">
-                                        <h1>Norde</h1>
-                                        <a class="projec-lists__link" href="http://norde.com.ph" target="_blank">View Website <i class="mdi mdi-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-none">
                                 <div class="convert-bg position--top" data-bg="assets/images/livechat.png">
                                 </div>
                                 <div class="projects-list__overlay">
@@ -542,7 +751,7 @@
                                         <h1>Livechat</h1>
                                         <p> <a href="https://nodejs.org/en/">Node JS</a>, <a href="https://socket.io/">Socket.IO</a>, <a href="https://materializecss.com">Materialcss</a></p>
 
-                                        <a class="projec-lists__link" href="assets/images/livechat.png" 
+                                        <a class="projec-lists__link magic-hover magic-hover__square" href="assets/images/livechat.png" 
                                             data-fancybox="images-preview" 
                                             data-thumbs='{"autoStart":true}'
                                             >
@@ -570,7 +779,7 @@
                             </div>
                         </li>
                         <li>
-                            <div class="projects-list__container">
+                            <div class="projects-list__container p-none">
                                 <div class="convert-bg position--top" data-bg="assets/images/aclancrown.png">
                                 </div>
                                 <div class="projects-list__overlay">
@@ -590,7 +799,7 @@
             <!-- Section 3 -->
             <div class="section contact-section" id="section3">
                 <!-- Background image-->
-                <div class="home-section-background convert-bg" data-bg="assets/images/dev_bg2.jpg">
+                <div class="home-section-background bg-starwheel" style="background-color: #222733;">
                     <div aria-hidden="false" class="home-section-background__index">
                         03.<span class="home-section-background__line"></span>
                     </div>
@@ -601,16 +810,14 @@
                     <div class="home-section-details">
                         <h5 class="home-section-details__eyebrow">Contact Me.</h5>
                         <div class="home-section-details__container">
-                            <h2 class="home-section-details__title">
-                                <a href="#">Get in touch with me.</a>
-                            </h2>
+                            <h2 class="home-section-details__title">Get in touch with me.</h2>
                             <div class="home-section-details__subtitle">
                                 <div class="home-section-details__subtitle-wrapper">
                                     <hr class="home-section-details__separator">
                                     <div class="home-section-details__description">
-                                        <a>
-                                            Have a question? Drop a line and I'll get back to you as soon as possible.
-                                        </a>
+                                        <p>
+                                            I'm always interested about cool stuff. Are you minding a project? then let's talk.
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -634,45 +841,45 @@
                             </div>
                             <input type="hidden" name="check1" class="d-none">
                             <input type="text" name="check2" class="d-none">
-                            <input type="submit" value="SUBMIT" name="submit" class="btn mt-3">
+                            <input type="submit" value="SUBMIT" name="submit" class="btn mt-3 magic-hover magic-hover__square">
                         </form>
-                        <div class="clearfix"></div>
-                        <ul class="contact-list mt-3 mb-4">
+                        <ul class="contact-list mt-3 mb-4 text-left">
                             <li>
-                                <a href="skype:nikkodc12?chat" title="Skype">
+                                <a href="skype:nikkodc12?chat" class="magic-hover magic-hover__square" title="Skype">
                                     <i class="mdi mdi-skype"></i>   
                                     <!-- <span>Skype</span> -->
                                 </a>
                             </li>
                             <li>
-                                <a href="https://www.linkedin.com/in/nikko-dela-cruz/" target="_blank" title="Linkedin">
+                                <a href="https://www.linkedin.com/in/nikko-dela-cruz/" target="_blank" class="magic-hover magic-hover__square" title="Linkedin">
                                     <i class="mdi mdi-linkedin"></i>
                                     <!-- <span>Linkedin</span> -->
                                 </a>
                             </li>
                             <li>
-                                <a href="#" target="_blank" title="Discord tag: #8307">
-                                    <i class="mdi mdi-discord"></i>
+                                <a href="mailto:nikkodc12@gmail.com" title="Email address" class="magic-hover magic-hover__square">
+                                    <i class="mdi mdi-email"></i>
                                     <!-- <span>Discord</span> -->
                                 </a>
                             </li>
                         </ul>
-			<a href="https://www.fiverr.com/nikkodelacruz" target="_blank" class="d-block text-white">Reach out to me on Fiverr</a> 
-			<!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
 
-			<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
-			     <a itemprop='url' href=https://www.fiverr.com/nikkodelacruz rel="nofollow" target="_blank" style='display: inline-block;'>
-				<div class='fiverr-seller-content' id='fiverr-seller-widget-content-df7c45a9-aab2-4c92-9aac-46df0a63e62d' itemprop='contentURL' style='display: none;'></div>
-				<div id='fiverr-widget-seller-data' style='display: none;'>
-				    <div itemprop='name' >nikkodelacruz</div>
-				    <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
-				    <div itemprop='jobtitle'>Seller</div>
-				    <div itemprop='description'>Proficient WordPress developer for more than 4 years. Experienced in developing e-commerce websites, themes, plugins and customizing Shopify store. Skilled in creating interactive, responsive, and user friendly websites. Detail-oriented and knowledgeable in some web frameworks.</div>
-				</div>
-			    </a>
-			</div>
+            			<a href="https://www.fiverr.com/nikkodelacruz" target="_blank" class="d-block text-white">Reach out to me on Fiverr</a> 
+            			<!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
 
-			<script id='fiverr-seller-widget-script-df7c45a9-aab2-4c92-9aac-46df0a63e62d' src='https://widgets.fiverr.com/api/v1/seller/nikkodelacruz?widget_id=df7c45a9-aab2-4c92-9aac-46df0a63e62d' data-config='{"category_name":"\n                                    Programming \u0026 Tech\n\n                            "}' async='true' defer='true'></script>
+            			<div itemscope itemtype='http://schema.org/Person' class='fiverr-seller-widget' style='display: inline-block;'>
+            			     <a itemprop='url' href=https://www.fiverr.com/nikkodelacruz rel="nofollow" target="_blank" style='display: inline-block;'>
+            				<div class='fiverr-seller-content' id='fiverr-seller-widget-content-df7c45a9-aab2-4c92-9aac-46df0a63e62d' itemprop='contentURL' style='display: none;'></div>
+            				<div id='fiverr-widget-seller-data' style='display: none;'>
+            				    <div itemprop='name' >nikkodelacruz</div>
+            				    <div itemscope itemtype='http://schema.org/Organization'><span itemprop='name'>Fiverr</span></div>
+            				    <div itemprop='jobtitle'>Seller</div>
+            				    <div itemprop='description'>Proficient WordPress developer for more than 4 years. Experienced in developing e-commerce websites, themes, plugins and customizing Shopify store. Skilled in creating interactive, responsive, and user friendly websites. Detail-oriented and knowledgeable in some web frameworks.</div>
+            				</div>
+            			    </a>
+            			</div>
+
+			            <script id='fiverr-seller-widget-script-df7c45a9-aab2-4c92-9aac-46df0a63e62d' src='https://widgets.fiverr.com/api/v1/seller/nikkodelacruz?widget_id=df7c45a9-aab2-4c92-9aac-46df0a63e62d' data-config='{"category_name":"\n                                    Programming \u0026 Tech\n\n                            "}' async='true' defer='true'></script>
 
                     </div>
                 </div>
@@ -686,7 +893,7 @@
                         <div class="global-footer__branding">
                             <a href="#" class="global-footer__huge">NIKKO DELACRUZ</a>
                             <div class="divider"></div>
-                            <div class="global-footer__mantra">Don't just dream of success, work for it.</div>
+                            <div class="global-footer__mantra">"Success consists of going from failure to failure without loss of enthusiasm." — Winston Churchill</div>
                         </div>
                         <div class="global-footer__nav-wrapper">
                             <ul class="footer-menu-right">
@@ -712,22 +919,22 @@
         <!-- menu -->
         <div class="global-nav-wrapper">
             <nav aria-hidden="false" class="global-nav global-nav--open">
-                <a class="global-nav-item" href="#home">
+                <a class="global-nav-item magic-hover magic-hover__square" href="#home">
                     <div class="global-nav-item__label">Home</div>
                     <hr class="global-nav-item__rule">
                     <div class="global-nav-item__description">See me.</div>
                 </a>
-                <a class="global-nav-item" href="#aboutMe">
+                <a class="global-nav-item magic-hover magic-hover__square" href="#aboutMe">
                     <div class="global-nav-item__label">About Me.</div>
                     <hr class="global-nav-item__rule">
                     <div class="global-nav-item__description">Who I am.</div>
                 </a>
-                <a class="global-nav-item" href="#myProjects">
+                <a class="global-nav-item magic-hover magic-hover__square" href="#myProjects">
                     <div class="global-nav-item__label">My Projects.</div>
                     <hr class="global-nav-item__rule">
                     <div class="global-nav-item__description">What I've made.</div>
                 </a>
-                <a class="global-nav-item" href="#contactMe">
+                <a class="global-nav-item magic-hover magic-hover__square" href="#contactMe">
                     <div class="global-nav-item__label">Contact Me.</div>
                     <hr class="global-nav-item__rule">
                     <div class="global-nav-item__description">Get in touch.</div>
